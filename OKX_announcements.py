@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
-
-
 import requests
 import json
 import pendulum
@@ -15,10 +12,6 @@ import time
 import streamlit as st
 warnings.filterwarnings('ignore')
 
-
-# In[17]:
-
-
 input_start = input('Input start YYYY-MM-DD ')
 input_end = input('Input end YYYY-MM-DD ')
 input_folder = input('Input folder ')
@@ -26,7 +19,6 @@ input_folder = input('Input folder ')
 START_DATE = datetime.datetime.strptime(input_start, '%Y-%m-%d').date()
 END_DATE = datetime.datetime.strptime(input_end, '%Y-%m-%d').date()
 folder = input_folder
-# r'C:\Users\mvsav\OneDrive\Рабочий стол\OKX_announcements'
 
 url = 'https://www.okx.com/api/v5/support/announcements'
 
