@@ -46,5 +46,9 @@ for i in range(0, total_pages):
 df = pd.DataFrame(results, columns=['type','date','title','url'])
 filename = f'{START_DATE}-{END_DATE}.csv'
 path = os.path.join(folder, filename)
-df.to_csv(path, index=False)
+try: 
+    df.to_csv(path, index=False)
+    print('Data saved successfully. Have a nice day.')
+except:
+    print('Something went wrong. Try again later.')
 
