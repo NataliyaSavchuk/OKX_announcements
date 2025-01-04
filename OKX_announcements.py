@@ -8,7 +8,6 @@ import os
 import warnings
 import datetime
 import time
-import pendulum
 warnings.filterwarnings('ignore')
 
 input_start = input('Input start YYYY-MM-DD ')
@@ -35,7 +34,7 @@ for i in range(0, total_pages):
     announcements = data['data'][0].get('details')
     for announcement in announcements:
         date = int(announcement.get('pTime')[:10])
-        date = pendulum.from_timestamp(date).date()
+        date = datetime.datetime.fromtimestamp(date).date()
         if (START_DATE <= date <= END_DATE):
             results.append([announcement.get('annType'), date, announcement.get('title'), announcement.get('url')])
         elif ((START_DATE > date) or (date > END_DATE)) and (len(results) > 0):
